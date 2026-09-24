@@ -4,12 +4,14 @@ Reverse-engineered notes on NBA 2K14's file formats. This is the highest-value, 
 
 ## Index
 
-_No file-format entries yet — add one using `templates/entry-template.md` and link it here._
+### Runtime memory
 
-<!-- Example lines once entries exist:
-- [iff-container.md](iff-container.md) — general `.iff` container structure used for textures/models
-- [roster-format.md](roster-format.md) — roster/draft-class save file structure
--->
+- [mycareer-ratings-memory-map.md](mycareer-ratings-memory-map.md): the MyCareer player's 42-byte rating block, plus height, weight, and birth year
+- [gameplay-sliders-memory-map.md](gameplay-sliders-memory-map.md): the User/CPU slider float array and fixed-address game clock values
+
+### On-disk files
+
+_None yet (roster/save format, `.iff` containers, etc.)._
 
 ## Notes for contributors
 

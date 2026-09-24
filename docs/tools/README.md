@@ -4,11 +4,7 @@ One file per modding tool. Each file should cover: what the tool does, what plat
 
 ## Index
 
-_No tool entries yet — add one using `templates/entry-template.md` and link it here._
-
-<!-- Example line once entries exist:
-- [Rookie](rookie.md) — texture/model extraction and injection for NBA 2K .iff files
--->
+- [Cheat Engine](cheat-engine.md): live memory editing with `.CT` tables (MyCareer ratings, sliders)
 
 ## Notes for contributors
 

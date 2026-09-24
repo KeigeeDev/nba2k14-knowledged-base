@@ -13,6 +13,8 @@ This repository is a knowledge base, not a codebase. Its purpose is to accumulat
 
 ## Where things go
 
+- `docs/game-mechanics/` — conceptual explanations of game systems (ratings, sliders, progression); link to `file-formats/` for byte-level detail
+- `sources/` — raw evidence files (cheat tables, hex dumps) exactly as obtained, with provenance and SHA-256 in that folder's README. Never edit them. Don't copy in files whose license/authorship forbids redistribution — link instead
 - `docs/tools/` — one file per tool (what it does, where to get it, known issues, usage notes)
 - `docs/file-formats/` — one file per file type or format area (e.g. `.iff` containers, roster/draft-class files, texture formats)
 - `docs/workflows/` — task-oriented guides (e.g. "swap a jersey texture", "edit a roster", "install a court mod")

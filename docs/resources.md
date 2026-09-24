@@ -4,9 +4,9 @@ Links to communities, forums, Discords, and archives relevant to NBA 2K14 moddin
 
 ## Index
 
-_No resource links added yet._
+- [Hexorg/CheatEngineTables: NBA 2K14 table v2_179](https://github.com/Hexorg/CheatEngineTables/blob/master/tables/nba_2k14_cheat_table_v2_179.ct): `live` (as of 2026-09-24). Includes MyCareer ratings, clocks, and game speed. The repo has no license and the table's original author is unknown.
 
-<!-- Example format once entries exist:
+<!-- Example format:
 - [Some Forum Name](https://example.com) — `live` — general NBA 2K PC modding discussion
 - [Some Old Thread](https://web.archive.org/...) — `archived` — original texture format breakdown, original site dead
 -->

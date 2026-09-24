@@ -17,15 +17,21 @@ NBA 2K14's PC modding knowledge is scattered across old forum posts, dead links,
 
 ```
 docs/
-  tools/            Modding tools — what they do, install notes, known issues
-  file-formats/     Reverse-engineered file format notes (.iff, textures, rosters, etc.)
+  game-mechanics/   How game systems work (ratings, sliders, progression)
+  tools/            Modding tools: what they do, install notes, known issues
+  file-formats/     Reverse-engineered layouts (memory maps, .iff, rosters, etc.)
   workflows/        Step-by-step guides for specific mod types
-  ai-workflows/      How to use AI assistants/models to help with modding tasks
-  glossary.md        Terms and acronyms used across the modding community
-  resources.md        Links to communities, forums, Discords, archives
+  ai-workflows/     How to use AI assistants/models to help with modding tasks
+  glossary.md       Terms and acronyms used across the modding community
+  resources.md      Links to communities, forums, Discords, archives
+sources/            Raw source material (cheat tables, dumps) that docs cite
 templates/
-  entry-template.md  Template to copy when adding a new knowledge entry
+  entry-template.md Template to copy when adding a new knowledge entry
 ```
+
+## Start here
+
+- [How player ratings work](docs/game-mechanics/player-ratings.md)
 
 ## Contribution status legend
 
