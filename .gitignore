@@ -9,3 +9,7 @@ Thumbs.db
 # Scratch / local-only notes
 /scratch/
 *.local.md
+
+# Python bytecode
+__pycache__/
+*.pyc

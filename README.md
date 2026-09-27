@@ -24,7 +24,7 @@ docs/
   ai-workflows/     How to use AI assistants/models to help with modding tasks
   glossary.md       Terms and acronyms used across the modding community
   resources.md      Links to communities, forums, Discords, archives
-sources/            Raw source material (cheat tables, dumps) that docs cite
+sources/            Raw source material (cheat tables, dumps, owner's notes and scripts) that docs cite
 templates/
   entry-template.md Template to copy when adding a new knowledge entry
 ```
@@ -32,6 +32,7 @@ templates/
 ## Start here
 
 - [How player ratings work](docs/game-mechanics/player-ratings.md)
+- [Make or edit a cyberface in Blender](docs/workflows/cyberface-blender.md)
 
 ## Contribution status legend
 

@@ -4,12 +4,7 @@ Task-oriented, step-by-step guides for specific mods — e.g. swapping a jersey 
 
 ## Index
 
-_No workflow entries yet — add one using `templates/entry-template.md` and link it here._
-
-<!-- Example lines once entries exist:
-- [roster-edit-basic.md](roster-edit-basic.md) — editing player attributes in a roster file
-- [jersey-texture-swap.md](jersey-texture-swap.md) — replacing a team's jersey texture
--->
+- [cyberface-blender.md](cyberface-blender.md): make or edit a cyberface: extract with the 3DM Tool, edit in Blender, re-import
 
 ## Notes for contributors
 
