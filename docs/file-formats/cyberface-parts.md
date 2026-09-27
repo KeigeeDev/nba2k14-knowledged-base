@@ -6,7 +6,7 @@
 
 ## Summary
 
-A 2K14 cyberface head model (`.n2km`) is split into 13 parts named `0-0` to `0-12`. Most edits touch only `0-1` (face, head and neck skin), `0-12` (hair) and sometimes `0-0` (headband). The mouth and eye parts are said to be bone-driven and should stay where they are.
+A 2K14 cyberface head model (`.n2km`) is split into 13 parts named `0-0` to `0-12`. Most edits touch only `0-1` (face, head and neck skin), `0-12` (hair) and sometimes `0-0` (headband). The mouth interior, teeth and eyeballs must stay where they are. The eye parts can move a little to follow the eyelids.
 
 ## Part map
 
@@ -33,9 +33,11 @@ For the pieces inside `0-12` (scalp cap, fringe cards, top fins, nape cards), se
 
 ## Parts not to move
 
-According to the owner's notes, `0-2`–`0-5` (mouth interior), `0-6`/`0-7` (eyeballs) and `0-8`–`0-11` (eye parts) are bone-driven, so the photo is fitted around them rather than the other way round. The notes contradict themselves on this point; see [the workflow](../workflows/cyberface-blender.md#contradictions-in-the-source-notes).
+According to the owner's notes, `0-2`–`0-5` (mouth interior), `0-6`/`0-7` (eyeballs) and `0-8`–`0-11` (eye parts) are bone-driven, so the photo is fitted around them rather than the other way round.
 
-How far each part actually moved in the owner's KQ edit `v7`, per the [compare output](../../sources/cyberface/compare-47F01028-v7.txt):
+Tested in game on KQ (edit `v7`): `0-2`–`0-7` left untouched and `0-8`–`0-11` moved up to about 0.6 units both looked right. See [how the rules were settled](../workflows/cyberface-blender.md#how-the-eye-and-mouth-rules-were-settled).
+
+How far each part moved in `v7`, per the [compare output](../../sources/cyberface/compare-47F01028-v7.txt):
 
 | Parts | Max vertex move (units) |
 |---|---|
