@@ -4,12 +4,12 @@ Notes on using AI tools — LLMs (like Claude), image upscalers, etc. — to mak
 
 ## Index
 
-_No ai-workflow entries yet — add one using `templates/entry-template.md` and link it here._
+### Cyberfaces (Blender driven by an AI assistant through the Blender MCP)
 
-<!-- Example lines once entries exist:
-- [texture-upscaling.md](texture-upscaling.md) — using AI upscalers on low-res court/jersey textures
-- [llm-script-generation.md](llm-script-generation.md) — using an LLM to write a batch roster-editing script
--->
+- [cyberface-blender-mcp-setup.md](cyberface-blender-mcp-setup.md): session setup, reference images, trustworthy renders, traps
+- [cyberface-reshaping.md](cyberface-reshaping.md): fitting the head to reference photos without changing topology
+- [cyberface-texture-projection.md](cyberface-texture-projection.md): baking front/side photos into `face_color`
+- [cyberface-hair.md](cyberface-hair.md): hair part `0-12` and `hair.dds`
 
 ## Ideas worth documenting as this grows
 

@@ -11,7 +11,11 @@ Reverse-engineered notes on NBA 2K14's file formats. This is the highest-value, 
 
 ### On-disk files
 
-_None yet (roster/save format, `.iff` containers, etc.)._
+- [n2km.md](n2km.md): `.n2km` model layout (header, parts, vertices, triangles)
+- [cyberface-parts.md](cyberface-parts.md): what parts `0-0` to `0-12` of a cyberface head are, with their vertex counts
+- [cyberface-textures.md](cyberface-textures.md): `face_color` / `skin_colour` / `hair` DDS formats, and the A8R8G8B8 byte layout
+
+_Still missing: roster/save format, `.iff` containers._
 
 ## Notes for contributors
 
