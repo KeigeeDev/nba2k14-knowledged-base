@@ -1,8 +1,8 @@
 # MyCareer player ratings — in-memory layout
 
-**Status:** [COMMUNITY] — addresses match across two separately obtained cheat tables. They haven't been tested in-game by this repo yet.
+**Status:** [COMMUNITY] — addresses match across two separately obtained cheat tables. They haven't been tested in-game by this repo yet. The rating *order* is now [VERIFIED]: it matches the independently mapped `.ROS` player record at all 42 positions.
 **Category:** file-format (runtime memory)
-**Last updated:** 2026-09-24
+**Last updated:** 2026-09-27
 
 ## Summary
 
@@ -27,7 +27,7 @@ Base = `nba2k14.exe+11DD6A0`. "Both" means the entry appears at this address in 
 | +0x02 | 11DD6A2 | Ball Handling | Both |
 | +0x03 | 11DD6A3 | 3PT Shot | Both |
 | +0x04 | 11DD6A4 | Free Throw | Both |
-| +0x05 | 11DD6A5 | **Unknown** | Neither (see open questions) |
+| +0x05 | 11DD6A5 | **`SShtLoP`** (RED MC field key; caption not yet known) | Neither table. Named from the [`.ROS` rating order](ros-player-record.md#skill-ratings). |
 | +0x06 | 11DD6A6 | Runner | Both |
 | +0x07 | 11DD6A7 | Standing Layup | Upload only |
 | +0x08 | 11DD6A8 | Layup | Both |
@@ -67,6 +67,8 @@ Base = `nba2k14.exe+11DD6A0`. "Both" means the entry appears at this address in 
 
 The byte order doesn't follow the in-game menu categories. For example, Ball Handling sits between Medium Shot and 3PT, and the post shots come last. Don't assume the order matches what the menu shows.
 
+**Same order as the roster file:** the 42 ratings in a [`.ROS` player record](ros-player-record.md#skill-ratings) are stored in exactly this order. In the roster file each rating is encoded as `raw = 3 × (shown − 25)`. Whether the in-memory bytes use the same encoding hasn't been tested. Reading one known rating in Cheat Engine would settle it.
+
 ## Other MyCareer fields near the ratings block
 
 From `nba2k14_1.CT`:
@@ -87,8 +89,8 @@ Hexorg's table also lists **Difficulty**, **Number Of Games In Season**, **Numbe
 
 1. Load `sources/cheat-tables/nba2k14_1.CT` in Cheat Engine and attach it to `nba2k14.exe` with a MyCareer save loaded.
 2. Open the MyCareer attributes screen. For a few ratings, compare the displayed value with the byte value (in Cheat Engine, set the display to decimal).
-3. **Encoding check:** if the byte doesn't match the displayed number, spend one skill point on a rating and note how much the byte changes. See the open questions.
-4. **Offset +0x05:** put the byte at `nba2k14.exe+11DD6A5` in the table, change it by a large amount, and see which rating changes on the attributes screen.
+3. **Encoding check:** if the byte doesn't match the displayed number, check whether it equals `3 × (shown − 25)`, the roster-file encoding. Spending one skill point should then change the byte by 3.
+4. **Offset +0x05 (`SShtLoP`):** put the byte at `nba2k14.exe+11DD6A5` in the table, change it by a large amount, and see which rating changes on the attributes screen. That gives the key its in-game name.
 5. Record the game build you tested on, the exe's file size or hash, and the results in this doc. Then upgrade the status to `[VERIFIED]`.
 
 ## Sources
@@ -98,7 +100,7 @@ Hexorg's table also lists **Difficulty**, **Number Of Games In Season**, **Numbe
 
 ## Open questions
 
-- **What is offset +0x05?** Neither table labels it. One lead: the game's sliders have separate "Inside Shot Success" and "Close Shot Success" values (see [sliders map](gameplay-sliders-memory-map.md)), so a separate "Shot Inside" rating is plausible. This is a hypothesis only.
-- **How are values encoded?** Does the byte store the displayed rating (e.g. 0–99) directly, or a scaled or offset form? Community tools for some older 2K roster files have described ratings as stored in scaled form. It's unconfirmed whether that applies to NBA 2K14 or to this memory block, so test it (step 3 above) before writing a tool that depends on it.
-- Does this block mirror the rating section of the player record in the roster/save file? If it does, the same byte order could help map the roster format.
+- **What does offset +0x05 mean in game?** Its RED MC field key is `SShtLoP` (from the roster-file order), but no source here gives its caption. One lead: the game's sliders have separate "Inside Shot Success" and "Close Shot Success" values (see [sliders map](gameplay-sliders-memory-map.md)), so a separate inside-shot rating is plausible. This is a hypothesis only.
+- **How are values encoded in memory?** In the roster file they're `raw = 3 × (shown − 25)` ([player record](ros-player-record.md#skill-ratings)). Whether memory uses the same form is untested (step 3 above).
+- ~~Does this block mirror the rating section of the roster file?~~ Answered: the byte order is identical ([player record](ros-player-record.md#skill-ratings)).
 - Which game build(s) do these addresses match?

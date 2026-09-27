@@ -1,8 +1,8 @@
 # How player ratings work in NBA 2K14
 
-**Status:** [COMMUNITY] for the list of ratings and their storage (backed by two cheat tables). [DRAFT] for anything about how ratings are encoded or computed.
+**Status:** [VERIFIED] for the list, storage order and roster-file encoding of the ratings (two cheat tables and the mapped `.ROS` player record agree). [DRAFT] for how ratings are encoded in memory and how the overall is computed.
 **Category:** game mechanics
-**Last updated:** 2026-09-24
+**Last updated:** 2026-09-27
 
 ## Summary
 
@@ -27,7 +27,7 @@ These are all the ratings found in the MyCareer rating block (see [MyCareer rati
 | Rebounding | Offensive Rebound, Defensive Rebound |
 | Athleticism | Speed, Quickness, Strength, Vertical, Stamina, Durability |
 | Mental / hidden | Offensive Awareness, Defensive Awareness, Consistency, Hustle, Emotion, Potential |
-| Unknown | One unidentified byte at offset +0x05 |
+| Unknown meaning | `SShtLoP`, at position 5. Named by its RED MC field key; its caption isn't known yet. |
 
 Notes:
 
@@ -37,9 +37,9 @@ Notes:
 
 ## How ratings are stored
 
-- **One byte per rating.** Whether the byte holds the rating number you see in the game or an encoded version of it is **not yet known**. Before building any tool, test it using the steps in the memory map doc.
-- **Overall rating (OVR) isn't in this block.** The game probably calculates the overall from the individual ratings, possibly with position-based weights, but that's unverified. If you want a different overall, change the individual ratings.
-- The mapped block covers **only the MyCareer player**, at a fixed address in the exe. The other players' ratings, and the roster/save file format, still need to be mapped.
+- **One byte per rating, in the same order in memory and in the roster file.** In roster files (`.ROS`) each byte is `raw = 3 × (shown − 25)`, so shown = raw / 3 + 25, a range of 25–110 ([player record](../file-formats/ros-player-record.md#skill-ratings)). Whether the in-memory MyCareer bytes use the same encoding hasn't been tested.
+- **Overall rating (OVR) isn't stored with the ratings.** Base rosters store `Overall_I = 1`; only career saves hold real values. Roster Lab estimates the overall with a per-position linear fit of the 42 ratings and claims 91% exact matches ([Roster Lab](../tools/roster-lab.md)), which fits the idea that the game computes it with position-based weights. The actual formula is still unknown. If you want a different overall, change the individual ratings.
+- **Every player's ratings are in the roster file**, not just the MyCareer player's ([`.ROS` player record](../file-formats/ros-player-record.md)).
 
 ## How sliders change the effect of ratings
 
@@ -57,17 +57,19 @@ The slider menu groups sliders as **Offense**, **Defense**, and **Attributes** (
 |---|---|---|---|
 | Cheat Engine with a `.CT` table | MyCareer player only (fixed addresses) | Written to memory; whether it's kept after saving hasn't been tested | [Cheat Engine](../tools/cheat-engine.md) |
 | In-game roster editor | Any player | Saved in the roster file | TODO |
-| External roster editor tool | Any player | Saved in the roster file | TODO: tool and source needed |
+| RED MC | Any player | Saved in the roster file | [RED MC](../tools/red-mc.md), [bulk edits through CSV](../workflows/roster-edit-csv.md) |
+| Roster Lab by Q2K | Any player | Saved in the roster file | [Roster Lab](../tools/roster-lab.md) |
+| Direct binary edit | Any player | Saved in the roster file (re-sign the CRC) | [player record](../file-formats/ros-player-record.md) |
 
 ## Sources
 
 - `sources/cheat-tables/nba2k14_1.CT`
 - Hexorg `nba_2k14_cheat_table_v2_179.ct` (see `sources/cheat-tables/README.md`)
+- Roster file: [`sources/roster-editing/ai-docs/06-player-record-map.md`](../../sources/roster-editing/ai-docs/06-player-record-map.md) and [`09-roster-lab.md`](../../sources/roster-editing/ai-docs/09-roster-lab.md)
 
 ## Open questions
 
-- How is the byte encoded? (raw 0–99 vs. scaled)
-- What is the byte at offset +0x05?
-- How is the overall rating calculated from the individual ratings?
-- Where is the player record stored in the roster/save file, and does it use the same rating order?
+- Are the in-memory MyCareer bytes encoded the same way as the roster file (`raw = 3 × (shown − 25)`)?
+- What does `SShtLoP` (position 5) mean in game?
+- What's the exact overall-rating formula?
 - Are ratings changed with Cheat Engine written to the MyCareer save when the game saves?

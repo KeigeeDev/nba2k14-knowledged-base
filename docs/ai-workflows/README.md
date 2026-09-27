@@ -11,6 +11,10 @@ Notes on using AI tools — LLMs (like Claude), image upscalers, etc. — to mak
 - [cyberface-texture-projection.md](cyberface-texture-projection.md): baking front/side photos into `face_color`
 - [cyberface-hair.md](cyberface-hair.md): hair part `0-12` and `hair.dds`
 
+### Rosters
+
+- [red-mc-ai-integration.md](red-mc-ai-integration.md): four ways to use AI tools with RED MC and roster files (TURK, CSV, direct edits, GUI automation)
+
 ## Ideas worth documenting as this grows
 
 These are starting points, not verified guides — flesh each one out into its own file (tagged `[DRAFT]` until tested) as they're tried:

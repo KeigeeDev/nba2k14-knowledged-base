@@ -33,6 +33,8 @@ templates/
 
 - [How player ratings work](docs/game-mechanics/player-ratings.md)
 - [Make or edit a cyberface in Blender](docs/workflows/cyberface-blender.md)
+- [How `.ROS` roster files are laid out](docs/file-formats/ros-roster.md)
+- [Bulk-edit a roster through RED MC's CSV export](docs/workflows/roster-edit-csv.md)
 
 ## Contribution status legend
 

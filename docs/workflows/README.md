@@ -5,6 +5,8 @@ Task-oriented, step-by-step guides for specific mods — e.g. swapping a jersey 
 ## Index
 
 - [cyberface-blender.md](cyberface-blender.md): make or edit a cyberface: extract with the 3DM Tool, edit in Blender, re-import
+- [roster-edit-csv.md](roster-edit-csv.md): bulk-edit a roster through RED MC's CSV export and import
+- [ros-field-mapping.md](ros-field-mapping.md): find where an unknown field is stored in a `.ROS` file (differential editing)
 
 ## Notes for contributors
 

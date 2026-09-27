@@ -15,7 +15,11 @@ Reverse-engineered notes on NBA 2K14's file formats. This is the highest-value, 
 - [cyberface-parts.md](cyberface-parts.md): what parts `0-0` to `0-12` of a cyberface head are, with their vertex counts
 - [cyberface-textures.md](cyberface-textures.md): `face_color` / `skin_colour` / `hair` DDS formats, and the A8R8G8B8 byte layout
 
-_Still missing: roster/save format, `.iff` containers._
+- [ros-roster.md](ros-roster.md): `.ROS` roster saves: header, CRC, table directory, section map, bitstream, string heap
+- [ros-player-record.md](ros-player-record.md): the 3,644-bit player record: mapped fields and the 42 skill ratings
+- [roster-iff.md](roster-iff.md): `roster.iff`, the game's default roster (IFF + zlib, little-endian)
+
+_Still missing: general `.iff` containers, `.FXG`/`.CMG` save tails._
 
 ## Notes for contributors
 
