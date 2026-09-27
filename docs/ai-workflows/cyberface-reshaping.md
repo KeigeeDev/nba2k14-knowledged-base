@@ -13,7 +13,7 @@ An AI assistant, working through the Blender MCP, measures front and side photos
 - Photo proportions never match the default head, so measure several ratios (model units ÷ photo pixels): eye spacing (IPD), ear-to-ear width, eye → chin, eye → mouth, mouth width, jaw width, eye → skull top.
 - Use the **median** ratio, anchored on the eye line. Give the side photo its own ratio, because the camera distance differs.
 - On KQ, scaling by IPD alone made the head about 14% too small. Scaling by mouth height alone misaligned the eyes.
-- The eyes and mouth interior are bone-driven, so fit the photo around them, not the other way round.
+- The eyes and mouth interior are bone-driven, so fit the photo around them, not the other way round. Don't make the head bigger with a uniform scale of every part: that would move them too.
 
 ## 2. Measure
 
@@ -28,7 +28,7 @@ These are summaries; the source guide has the parameters.
 
 - **Face width:** the photo mask can't see the cheek edge (ears and hair form the silhouette there). Use a front image with a drawn face contour, and first check it lines up at the pupils, nostrils, mouth and jaw. Compare it with the **ear root** of the model, not the ear rim.
 - **Ears:** trace the ear outline in the side photo. Match the model ear to it by moments (centroid, principal axes, spread) rather than single extreme points. Blend with a smoothstep so the root stays attached. Default ears tend to be too small and lean forward; real ears lean back about 10–15°. Afterwards, check the headband (`0-0`) still clears the ear.
-- **Eye openings:** leave the eyeballs alone. Rebuild each 18-vertex eye-hole loop of `0-1` as an almond shape, keep every lid vertex in front of the eyeball, and carry the nearby skin and lash parts with a smooth field. This moves `0-8`–`0-11` slightly, which conflicts with the index's "don't move" rule ([contradictions](../workflows/cyberface-blender.md#contradictions-in-the-source-notes)).
+- **Eye openings:** leave the eyeballs alone. Rebuild each 18-vertex eye-hole loop of `0-1` as an almond shape, keep every lid vertex in front of the eyeball, and carry the nearby skin and lash parts with a smooth field. This moves `0-8`–`0-11` slightly. On KQ that was up to 0.64 units, and it looked right in game ([rules](../workflows/cyberface-blender.md#how-the-eye-and-mouth-rules-were-settled)).
 - **Nose:** check the profile first, then the width, then the form. Default 2K noses are angular. Round them with masked Taubin smoothing plus a small bulge at the nostril wings, and check that the midline profile moves less than about 0.2 units.
 
 ## 4. Apply smooth displacement fields

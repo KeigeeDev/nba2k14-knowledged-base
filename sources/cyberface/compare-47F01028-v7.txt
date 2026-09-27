@@ -1,0 +1,16 @@
+C:\2K Modding\Cyberface\scripts>python n2km_tools.py compare 47F01028.N2KM 47F01028_edit_v7.n2km
+size 80712 vs 80712; parts match: True
+  0-0    OK  verts 145/145 faces 196/196 faces_same=True max_move=0.14 uv_diff=0.000000
+  0-1    OK  verts 1399/1399 faces 2664/2664 faces_same=True max_move=3.33 uv_diff=0.000001
+  0-2    OK  verts 91/91 faces 100/100 faces_same=True max_move=0.00 uv_diff=0.000001
+  0-3    OK  verts 44/44 faces 66/66 faces_same=True max_move=0.00 uv_diff=0.000001
+  0-4    OK  verts 66/66 faces 60/60 faces_same=True max_move=0.00 uv_diff=0.000000
+  0-5    OK  verts 68/68 faces 60/60 faces_same=True max_move=0.00 uv_diff=0.000001
+  0-6    OK  verts 113/113 faces 210/210 faces_same=True max_move=0.00 uv_diff=0.000000
+  0-7    OK  verts 113/113 faces 210/210 faces_same=True max_move=0.00 uv_diff=0.000000
+  0-8    OK  verts 50/50 faces 60/60 faces_same=True max_move=0.39 uv_diff=0.000000
+  0-9    OK  verts 108/108 faces 128/128 faces_same=True max_move=0.39 uv_diff=0.000001
+  0-10   OK  verts 31/31 faces 36/36 faces_same=True max_move=0.56 uv_diff=0.000000
+  0-11   OK  verts 31/31 faces 36/36 faces_same=True max_move=0.64 uv_diff=0.000001
+  0-12   OK  verts 457/457 faces 536/536 faces_same=True max_move=12.63 uv_diff=0.000001
+RESULT: SAFE to import
