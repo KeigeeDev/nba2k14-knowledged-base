@@ -1,6 +1,6 @@
 # Cyberface textures (`.dds`)
 
-**Status:** [VERIFIED] for the byte layout of uncompressed A8R8G8B8 DDS files: checked on 2026-09-27 against Pillow's independent DDS reader and writer. [DRAFT] for the format and size of each 2K14 file, which come from the owner's notes on one cyberface and haven't been checked on a file in this repo.
+**Status:** [VERIFIED] for the byte layout of uncompressed A8R8G8B8 DDS files (checked on 2026-09-27 against Pillow's independent DDS reader and writer). [VERIFIED] for the in-game face texture result (tested in game by the repo owner on one cyberface). [DRAFT] for the format and size of each 2K14 file, which come from the owner's notes and haven't been checked on a file in this repo.
 **Category:** file-format
 **Last updated:** 2026-09-27
 
@@ -18,7 +18,7 @@ A cyberface uses three DDS textures. The face and skin textures are block-compre
 
 According to the notes, the original game files have no mipmaps.
 
-### What worked in game (owner's report, one cyberface)
+### What worked in game (tested by the repo owner on KQ)
 
 - The face texture was baked at 2048², downsized to 512² and saved as **DXT5 with mipmaps (10 levels)**. It worked in game even though the original has no mips. (512² down to 1² is 10 levels.)
 - Sizes above the originals are **untested**, both for the face and for a 512² `hair.dds`.
@@ -56,6 +56,7 @@ A DDS file starts with the 4-byte magic `DDS `, then a 124-byte header, then the
 
 - [`sources/cyberface/guides/05_file_formats.md`](../../sources/cyberface/guides/05_file_formats.md) and [`sources/cyberface/scripts/dds_tools.py`](../../sources/cyberface/scripts/dds_tools.py) (owner's notes and script).
 - Tested during review on 2026-09-27 with Pillow 12.3.0 (independent DDS implementation).
+- In-game result: tested by the repo owner on the KQ cyberface, confirmed 2026-09-27.
 - Per search excerpts, icecr's NLSC tutorial also saves the edited face texture as DXT5: https://forums.nba-live.com/viewtopic.php?f=154&t=113460
 
 ## Open questions

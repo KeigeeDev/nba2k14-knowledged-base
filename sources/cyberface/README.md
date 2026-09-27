@@ -15,10 +15,11 @@ Don't hand-edit these files. When the local notes change, replace them here in o
 | `scripts/cf_blender.py` | `281eba7bdbd16da59dff265b450c04270789663bf45c8c8a59d2dcd2c05ffe7f` | Blender-side helpers (render, TPS warp, UV raster, validation) | [scripts](../../docs/tools/cyberface-scripts.md) |
 | `scripts/dds_tools.py` | `5fe967a6ae4714818391b7532290443a3c5377b131ebd0b18a0fd84aad49fcc0` | Read/write uncompressed A8R8G8B8 DDS; DDS header info | [scripts](../../docs/tools/cyberface-scripts.md) |
 | `scripts/n2km_tools.py` | `3680086f613cdfcffea0940325e0f39eac720f6f1571220f133819241a6ffa62` | `.n2km` info and pre-import safety compare | [scripts](../../docs/tools/cyberface-scripts.md) |
+| `compare-47F01028-v7.txt` | `84fea19b46a057a9eaa7efadfc295f77477f8c5b7ab1ccde324ef33fa30cf099` | Output of `n2km_tools.py compare` on the real KQ head (`47F01028.N2KM`) vs the owner's edit `v7`, run on the owner's machine and pasted in chat on 2026-09-27 | [n2km](../../docs/file-formats/n2km.md), [parts](../../docs/file-formats/cyberface-parts.md) |
 
 ## Things to know when reading these
 
-- The notes were written during one cyberface project, "KQ" (hair model `47F01028`). Coordinates, thresholds and falloff radii come from that model and may not carry over to other heads.
+- The notes were written during one cyberface project, "KQ" (head model `47F01028.N2KM`). Coordinates, thresholds and falloff radii come from that model and may not carry over to other heads.
 - Parts of the notes are addressed to Claude (for example "rule for Claude", and the warnings about several sessions sharing one Blender). They are working notes, not a polished tutorial.
 - Paths like `C:\2K Modding\...` and `C:\Editing Tools\RED MC` are the owner's local install paths. In this repo the scripts are in `sources/cyberface/scripts/`.
 - The notes refer to files that were **not** uploaded: `projects/<PLAYER>.md` logs, `projects/*_landmarks.json`, per-player folders, and the game files themselves.

@@ -54,6 +54,12 @@ Resolve these with an in-game test before anyone relies on them:
 - The index says "Uniform head scaling (e.g. 1.03) applies to **every** part", but it also says not to move the eyes, eye parts or mouth interior. Scaling every part moves those too.
 - The index says not to move eye parts `0-8`–`0-11`. The reshaping guide's eye-opening method *does* move them slightly (it carries them along with the eyelid loops), then says to check that they "stay OK in validation".
 
+**What the owner's KQ edit `v7` actually did** ([compare output](../../sources/cyberface/compare-47F01028-v7.txt)):
+
+- `0-2`–`0-7` (mouth interior, teeth, eyeballs): moved 0.00, so no uniform scale was applied to them.
+- `0-8`–`0-11` (eye parts): moved 0.39–0.64 units.
+- `0-1` (face/head) up to 3.33, `0-12` (hair) up to 12.63, `0-0` (headband) 0.14.
+
 ## Common pitfalls
 
 - Blender can't open `hair.dds` (uncompressed A8R8G8B8). Use `dds_tools.read_argb`, see [cyberface textures](../file-formats/cyberface-textures.md).

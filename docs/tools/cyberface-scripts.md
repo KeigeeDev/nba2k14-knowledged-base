@@ -32,6 +32,7 @@ Tested with Python 3.11, numpy 2.4.6 and Pillow 12.3.0, on synthetic files:
   - Moved vertices → `SAFE to import` (exit 0).
   - Changed UVs → `DO NOT IMPORT` (exit 1).
   - An added vertex and face → `DO NOT IMPORT` (exit 1).
+- **`n2km_tools compare` on a real file (owner's run):** it parsed the real KQ head and its edit, and the reported size matches the documented layout to the byte. [Output](../../sources/cyberface/compare-47F01028-v7.txt).
 - **`cf_blender.tps_fit`**
   - With `reg=0` it reproduces an affine map exactly, including outside the landmarks.
   - With 2 px landmark noise, `reg=0.5` leaves about 0.3 px residual at the landmarks and `reg=5` about 1.5 px. The notes' "fit error < 1 px" target is reachable, but it depends on `reg`.
