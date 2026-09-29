@@ -9,7 +9,10 @@ One file per modding tool. Each file should cover: what the tool does, what plat
 - [Cyberface helper scripts](cyberface-scripts.md): `n2km_tools`, `dds_tools` and `cf_blender` (safety check, DDS read/write, Blender helpers)
 - [io_n2km](io-n2km.md): Blender add-on to import and export `.n2km` models
 - [MCP for Blender](mcp-for-blender.md): lets an AI assistant run Python in a live Blender session
-- [RED MC](red-mc.md): roster editor; used to look up a player's CyberFace ID
+- [RED MC](red-mc.md): the standard NBA 2K13/2K14 roster and `.iff` editor (5.0, free)
+- [Roster Lab by Q2K](roster-lab.md): third-party 2K14 roster editor with crash-safety checks
+- [Roster scripts](roster-scripts.md): `ros_inspect`, `rmcsv`, `rlapply`, `roster_lab_inspect`
+- [TURK](turk.md): RED MC's built-in scripting language
 
 ## Notes for contributors
 
